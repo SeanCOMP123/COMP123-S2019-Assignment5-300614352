@@ -5,7 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*-------------------------------------------------
+ * Studnet Name: Sean(Myoung seop) Kwak
+ * Studnet Number: 300614352
+ * Name of Assignment: Dollar Computers Application
+ * Date of Creation: 2019-07-31
+ * Last day of Revision: 2019-08-02
+ ---------------------------------------------------*/
 namespace COMP123_S2019_Assignment5_300614352
 {
     static class Program
