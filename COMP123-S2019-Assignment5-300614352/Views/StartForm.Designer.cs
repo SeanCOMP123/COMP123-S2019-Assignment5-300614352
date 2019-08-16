@@ -34,6 +34,7 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.StartFormTitleLabel = new System.Windows.Forms.Label();
+            this.StartFormOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -99,14 +100,18 @@
             this.StartFormTitleLabel.ForeColor = System.Drawing.Color.Black;
             this.StartFormTitleLabel.Location = new System.Drawing.Point(128, 19);
             this.StartFormTitleLabel.Name = "StartFormTitleLabel";
-            this.StartFormTitleLabel.Size = new System.Drawing.Size(544, 31);
+            this.StartFormTitleLabel.Size = new System.Drawing.Size(799, 46);
             this.StartFormTitleLabel.TabIndex = 5;
             this.StartFormTitleLabel.Text = "Get Your Newest Gears at Dollar Computer!";
             this.StartFormTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // StartFormOpenFileDialog
+            // 
+            this.StartFormOpenFileDialog.FileName = "openFileDialog1";
+            // 
             // StartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.ControlBox = false;
@@ -115,7 +120,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -134,5 +139,6 @@
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label StartFormTitleLabel;
+        private System.Windows.Forms.OpenFileDialog StartFormOpenFileDialog;
     }
 }

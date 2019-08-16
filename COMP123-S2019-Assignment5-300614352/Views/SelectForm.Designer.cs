@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.DollarComputerHardwareListLabel = new System.Windows.Forms.Label();
             this.ProductDataGridView = new System.Windows.Forms.DataGridView();
+            this.moust_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.YourSelectionLabel = new System.Windows.Forms.Label();
             this.YourSelectionOutputLabel = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,9 +64,9 @@
             this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.depthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moust_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.powerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.webcamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -131,6 +131,14 @@
             this.ProductDataGridView.TabIndex = 1;
             this.ProductDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductDataGridView_CellClick);
             // 
+            // moust_type
+            // 
+            this.moust_type.DataPropertyName = "moust_type";
+            this.moust_type.HeaderText = "Mouse Type";
+            this.moust_type.Name = "moust_type";
+            this.moust_type.ReadOnly = true;
+            this.moust_type.Width = 215;
+            // 
             // YourSelectionLabel
             // 
             this.YourSelectionLabel.Location = new System.Drawing.Point(8, 628);
@@ -168,10 +176,6 @@
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(COMP123_S2019_Assignment5_300614352.Models.Product);
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -397,14 +401,6 @@
             this.weightDataGridViewTextBoxColumn.ReadOnly = true;
             this.weightDataGridViewTextBoxColumn.Width = 145;
             // 
-            // moust_type
-            // 
-            this.moust_type.DataPropertyName = "moust_type";
-            this.moust_type.HeaderText = "Mouse Type";
-            this.moust_type.Name = "moust_type";
-            this.moust_type.ReadOnly = true;
-            this.moust_type.Width = 215;
-            // 
             // powerDataGridViewTextBoxColumn
             // 
             this.powerDataGridViewTextBoxColumn.DataPropertyName = "power";
@@ -420,6 +416,10 @@
             this.webcamDataGridViewTextBoxColumn.Name = "webcamDataGridViewTextBoxColumn";
             this.webcamDataGridViewTextBoxColumn.ReadOnly = true;
             this.webcamDataGridViewTextBoxColumn.Width = 167;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(COMP123_S2019_Assignment5_300614352.Models.Product);
             // 
             // SelectForm
             // 
