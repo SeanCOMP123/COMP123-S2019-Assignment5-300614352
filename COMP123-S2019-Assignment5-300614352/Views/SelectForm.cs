@@ -10,6 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+/*
+ * Student Name: Sean Kwak
+ * Student ID: 300614352
+ * Description : This is the SelectForm that allow user to choose the computer product.
+ */
 
 
 namespace COMP123_S2019_Assignment5_300614352.Views

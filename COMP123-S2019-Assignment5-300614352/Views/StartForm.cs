@@ -8,6 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+/*
+ * Student Name: Sean Kwak
+ * Student ID: 300614352
+ * Description : This is the StartForm for the application
+ */
 
 namespace COMP123_S2019_Assignment5_300614352.Views
 {
