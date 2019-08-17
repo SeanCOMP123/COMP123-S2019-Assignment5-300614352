@@ -85,7 +85,7 @@ namespace COMP123_S2019_Assignment5_300614352.Views
         {
             // configure the file dialog
 
-            ProductInfoFormOpenFileDialog.FileName = "SavedProduct.txt";
+            ProductInfoFormOpenFileDialog.FileName = "";
 
             ProductInfoFormOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
 
@@ -157,7 +157,7 @@ namespace COMP123_S2019_Assignment5_300614352.Views
         {
             // configure the file dialog
 
-            ProductInfoFormSaveFileDialog.FileName = "SavedProduct.txt";
+            ProductInfoFormSaveFileDialog.FileName = "Product.txt";
 
             ProductInfoFormSaveFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
 

@@ -48,9 +48,9 @@ namespace COMP123_S2019_Assignment5_300614352.Views
         /// <param name="e"></param>
         private void OpenSavedOrderButton_Click(object sender, EventArgs e)
         {
-           
+
             // configure the file dialog
-            StartFormOpenFileDialog.FileName = "SavedProduct.txt";
+            StartFormOpenFileDialog.FileName = "";
             StartFormOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
             StartFormOpenFileDialog.Filter = "Text Files (*.txt)|*.txt| All Files (*.*)|*.*";
             // open the file dialog
@@ -86,6 +86,9 @@ namespace COMP123_S2019_Assignment5_300614352.Views
                         inputStream.Dispose();
 
                     }
+                    //show ProductInfoForm
+                    Program.Forms[FormNames.PRODUCT_INFO_FORM].Show();
+                    this.Hide();
 
                 }
                 catch (IOException exception)
@@ -97,9 +100,7 @@ namespace COMP123_S2019_Assignment5_300614352.Views
                 }
 
             }
-            //show ProductInfoForm
-            Program.Forms[FormNames.PRODUCT_INFO_FORM].Show();
-            this.Hide();
+          
         }
         /// <summary>
         /// This is an event handler when startFrom is Loaded. Load the image
