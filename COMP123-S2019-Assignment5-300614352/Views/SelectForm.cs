@@ -65,15 +65,13 @@ namespace COMP123_S2019_Assignment5_300614352.Views
         /// <param name="e"></param>
         private void ProductDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             var rowIndex = ProductDataGridView.CurrentCell.RowIndex;
-            Debug.WriteLine(rowIndex);
             var rows = ProductDataGridView.Rows;
-            var columnCount = ProductDataGridView.ColumnCount;
+            //var columnCount = ProductDataGridView.ColumnCount;
             var cells = rows[rowIndex].Cells;
             rows[rowIndex].Selected = true;
 
-            YourSelectionOutputLabel.Text = cells[1].Value.ToString() + cells[2].Value.ToString() + cells[3].Value.ToString();
+            YourSelectionOutputLabel.Text = cells[1].Value.ToString() +" "+ cells[2].Value.ToString() + " " + cells[3].Value.ToString();
 
             //string outputString = string.Empty;
             //for (int index = 0; index < columnCount; index++)
@@ -82,37 +80,37 @@ namespace COMP123_S2019_Assignment5_300614352.Views
             //}
 
             //store values into property
-            Program.Product.productID = int.Parse(cells[0].Value.ToString());
-            Program.Product.cost = cells[1].Value.ToString();
-            Program.Product.manufacturer = cells[2].Value.ToString();
-            Program.Product.model = cells[3].Value.ToString();
-            Program.Product.ram_type = cells[4].Value.ToString();
-            Program.Product.ram_size = cells[5].Value.ToString();
-            Program.Product.displaytype = cells[6].Value.ToString();
-            Program.Product.screensize = cells[7].Value.ToString();
-            Program.Product.resolution = cells[8].Value.ToString();
-            Program.Product.cpu_class = cells[9].Value.ToString();
-            Program.Product.cpu_brand = cells[10].Value.ToString();
-            Program.Product.cpu_type = cells[11].Value.ToString();
-            Program.Product.cpu_speed = cells[12].Value.ToString();
-            Program.Product.cpu_number = cells[13].Value.ToString();
-            Program.Product.condition = cells[14].Value.ToString();
-            Program.Product.os = cells[15].Value.ToString();
-            Program.Product.platform = cells[16].Value.ToString();
-            Program.Product.hdd_size = cells[17].Value.ToString();
-            Program.Product.hdd_speed = cells[18].Value.ToString();
-            Program.Product.gpu_type = cells[19].Value.ToString();
-            Program.Product.optical_drive = cells[20].Value.ToString();
-            Program.Product.audio_type = cells[21].Value.ToString();
-            Program.Product.lan = cells[22].Value.ToString();
-            Program.Product.wifi = cells[23].Value.ToString();
-            Program.Product.width = cells[24].Value.ToString();
-            Program.Product.height = cells[25].Value.ToString();
-            Program.Product.depth = cells[26].Value.ToString();
-            Program.Product.weight = cells[27].Value.ToString();
-            Program.Product.mouse_type = cells[28].Value.ToString();
-            Program.Product.power = cells[29].Value.ToString();
-            Program.Product.webcam = cells[30].Value.ToString();
+            Program.product.productID = short.Parse(cells[0].Value.ToString());
+            Program.product.cost = decimal.Parse(cells[1].Value.ToString());
+            Program.product.manufacturer = cells[2].Value.ToString();
+            Program.product.model = cells[3].Value.ToString();
+            Program.product.RAM_type = cells[4].Value.ToString();
+            Program.product.RAM_size = cells[5].Value.ToString();
+            Program.product.displaytype = cells[6].Value.ToString();
+            Program.product.screensize = cells[7].Value.ToString();
+            Program.product.resolution = cells[8].Value.ToString();
+            Program.product.CPU_Class = cells[9].Value.ToString();
+            Program.product.CPU_brand = cells[10].Value.ToString();
+            Program.product.CPU_type = cells[11].Value.ToString();
+            Program.product.CPU_speed = cells[12].Value.ToString();
+            Program.product.CPU_number = cells[13].Value.ToString();
+            Program.product.condition = cells[14].Value.ToString();
+            Program.product.OS = cells[15].Value.ToString();
+            Program.product.platform = cells[16].Value.ToString();
+            Program.product.HDD_size = cells[17].Value.ToString();
+            Program.product.HDD_speed = cells[18].Value.ToString();
+            Program.product.GPU_Type = cells[19].Value.ToString();
+            Program.product.optical_drive = cells[20].Value.ToString();
+            Program.product.Audio_type = cells[21].Value.ToString();
+            Program.product.LAN = cells[22].Value.ToString();
+            Program.product.WIFI = cells[23].Value.ToString();
+            Program.product.width = cells[24].Value.ToString();
+            Program.product.height = cells[25].Value.ToString();
+            Program.product.depth = cells[26].Value.ToString();
+            Program.product.weight = cells[27].Value.ToString();
+            Program.product.moust_type = cells[28].Value.ToString();
+            Program.product.power = cells[29].Value.ToString();
+            Program.product.webcam = cells[30].Value.ToString();
         }
-    }
+    }   
 }

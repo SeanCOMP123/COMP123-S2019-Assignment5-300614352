@@ -65,22 +65,22 @@ namespace COMP123_S2019_Assignment5_300614352.Views
                         File.Open(StartFormOpenFileDialog.FileName, FileMode.Open)))
                     {
                         // Read stuff into the Student class
-                        Program.Product.productID = int.Parse(inputStream.ReadLine());
-                        Program.Product.condition = inputStream.ReadLine();
-                        Program.Product.cost = inputStream.ReadLine();
-                        Program.Product.platform = inputStream.ReadLine();
-                        Program.Product.os = inputStream.ReadLine();
-                        Program.Product.manufacturer = inputStream.ReadLine();
-                        Program.Product.model = inputStream.ReadLine();
-                        Program.Product.ram_size = inputStream.ReadLine();
-                        Program.Product.screensize = inputStream.ReadLine();
-                        Program.Product.hdd_size = inputStream.ReadLine();
-                        Program.Product.cpu_brand = inputStream.ReadLine();
-                        Program.Product.cpu_number = inputStream.ReadLine();
-                        Program.Product.gpu_type = inputStream.ReadLine();
-                        Program.Product.cpu_type = inputStream.ReadLine();
-                        Program.Product.cpu_speed = inputStream.ReadLine();
-                        Program.Product.webcam = inputStream.ReadLine();
+                        Program.product.productID = short.Parse(inputStream.ReadLine());
+                        Program.product.condition = inputStream.ReadLine();
+                        Program.product.cost = decimal.Parse(inputStream.ReadLine());
+                        Program.product.platform = inputStream.ReadLine();
+                        Program.product.OS = inputStream.ReadLine();
+                        Program.product.manufacturer = inputStream.ReadLine();
+                        Program.product.model = inputStream.ReadLine();
+                        Program.product.RAM_size = inputStream.ReadLine();
+                        Program.product.screensize = inputStream.ReadLine();
+                        Program.product.HDD_size = inputStream.ReadLine();
+                        Program.product.CPU_brand = inputStream.ReadLine();
+                        Program.product.CPU_number = inputStream.ReadLine();
+                        Program.product.GPU_Type = inputStream.ReadLine();
+                        Program.product.CPU_type = inputStream.ReadLine();
+                        Program.product.CPU_speed = inputStream.ReadLine();
+                        Program.product.webcam = inputStream.ReadLine();
                         // cleanup
                         inputStream.Close();
                         inputStream.Dispose();
@@ -100,6 +100,17 @@ namespace COMP123_S2019_Assignment5_300614352.Views
             //show ProductInfoForm
             Program.Forms[FormNames.PRODUCT_INFO_FORM].Show();
             this.Hide();
+        }
+        /// <summary>
+        /// This is an event handler when startFrom is Loaded. Load the image
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StartForm_Load(object sender, EventArgs e)
+        {
+            FileStream image = new FileStream(@"Images\DollarStore.jpg", FileMode.Open, FileAccess.Read);
+            StartFormPictureBox.Image = Image.FromStream(image);
+            image.Close();
         }
     }    
 }

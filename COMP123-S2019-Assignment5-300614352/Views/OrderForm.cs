@@ -62,37 +62,37 @@ namespace COMP123_S2019_Assignment5_300614352.Views
         private void OrderForm_Activated(object sender, EventArgs e)
         {
             //Assign label.text with property values
-            ConditionOutputLabel.Text = Program.Product.condition;
-            PriceOutputLabel.Text = Program.Product.cost;
-            PlatformOutputLabel.Text = Program.Product.platform;
-            OSOutputLabel.Text = Program.Product.os;
-            ManufacturerOutputLabel.Text = Program.Product.manufacturer;
-            ModelOutputLabel.Text = Program.Product.model;
-            MemoryOutputLabel.Text = Program.Product.ram_size;
-            OrderFormLCDSizeOutputLabel.Text = Program.Product.screensize;
-            HDDOutputLabel.Text = Program.Product.hdd_size;
-            CPUBrandOutputLabel.Text = Program.Product.cpu_brand;
-            CPUBrandOutputLabel.Text = Program.Product.cpu_number;
-            GPUTypeOutputLabel.Text = Program.Product.gpu_type;
-            CPUTypeOutputLabel.Text = Program.Product.cpu_type;
-            CPUSpeedOutputLabel.Text = Program.Product.cpu_speed;
-            WebCamOutputLabel.Text = Program.Product.webcam;
+            ConditionOutputLabel.Text = Program.product.condition;
+            PriceOutputLabel.Text = Program.product.cost.ToString();
+            PlatformOutputLabel.Text = Program.product.platform;
+            OSOutputLabel.Text = Program.product.OS;
+            ManufacturerOutputLabel.Text = Program.product.manufacturer;
+            ModelOutputLabel.Text = Program.product.model;
+            MemoryOutputLabel.Text = Program.product.RAM_size;
+            OrderFormLCDSizeOutputLabel.Text = Program.product.screensize;
+            HDDOutputLabel.Text = Program.product.HDD_size;
+            CPUBrandOutputLabel.Text = Program.product.CPU_brand;
+            CPUBrandOutputLabel.Text = Program.product.CPU_number;
+            GPUTypeOutputLabel.Text = Program.product.GPU_Type;
+            CPUTypeOutputLabel.Text = Program.product.CPU_type;
+            CPUSpeedOutputLabel.Text = Program.product.CPU_speed;
+            WebCamOutputLabel.Text = Program.product.webcam;
 
             //calculate salestax and total cost
-            double salestax = double.Parse(Program.Product.cost) * 0.13;
-            double total = salestax + double.Parse(Program.Product.cost);
+            decimal salestax = (decimal)Program.product.cost * (decimal)0.13;
+            decimal total = salestax + (decimal)Program.product.cost;
             SalesTaxOutputLabel.Text = salestax.ToString("0.00##");
             TotalOutputLabel.Text = total.ToString("0.00##");
 
             //Condition for which picture should be in the OrderFormPictureBox
-            if (Program.Product.manufacturer.Contains("Toshiba"))
+            if (Program.product.manufacturer.Contains("Toshiba"))
             {
                 FileStream image = new FileStream(@"Images\TOSHIBALaptopjpg.jpg", FileMode.Open, FileAccess.Read);
 
                 OrderFormPictureBox.Image = Image.FromStream(image);
                 image.Close();
             }
-            if (Program.Product.manufacturer.Contains("Acer"))
+            if (Program.product.manufacturer.Contains("Acer"))
             {
                 FileStream image = new FileStream(@"Images\AcerLaptop.jpg", FileMode.Open, FileAccess.Read);
 
@@ -100,41 +100,41 @@ namespace COMP123_S2019_Assignment5_300614352.Views
                 image.Close();
 
             }
-            if (Program.Product.manufacturer.Contains("HP") && Program.Product.platform.Contains("Laptop"))
+            if (Program.product.manufacturer.Contains("HP") && Program.product.platform.Contains("Laptop"))
             {
                 FileStream image = new FileStream(@"Images\HPLaptop.png", FileMode.Open, FileAccess.Read);
                 OrderFormPictureBox.Image = Image.FromStream(image);
                 image.Close();
 
             }
-            else if (Program.Product.manufacturer.Contains("HP") && Program.Product.platform.Contains("Desktop"))
+            else if (Program.product.manufacturer.Contains("HP") && Program.product.platform.Contains("Desktop"))
             {
                 FileStream image = new FileStream(@"Images\HPDesktop.jpg", FileMode.Open, FileAccess.Read);
                 OrderFormPictureBox.Image = Image.FromStream(image);
                 image.Close();
             }
-            if (Program.Product.manufacturer.Contains("Apple"))
+            if (Program.product.manufacturer.Contains("Apple"))
             {
                 FileStream image = new FileStream(@"Images\AppleDesktop.png", FileMode.Open, FileAccess.Read);
                 OrderFormPictureBox.Image = Image.FromStream(image);
                 image.Close();
 
             }
-            if (Program.Product.manufacturer.Contains("CybertronPC"))
+            if (Program.product.manufacturer.Contains("CybertronPC"))
             {
                 FileStream image = new FileStream(@"Images\CybertronPC.png", FileMode.Open, FileAccess.Read);
                 OrderFormPictureBox.Image = Image.FromStream(image);
                 image.Close();
 
             }
-            if (Program.Product.manufacturer.Contains("Gateway"))
+            if (Program.product.manufacturer.Contains("Gateway"))
             {
                 FileStream image = new FileStream(@"Images\GatewayPC.png", FileMode.Open, FileAccess.Read);
                 OrderFormPictureBox.Image = Image.FromStream(image);
                 image.Close();
 
             }
-            if (Program.Product.manufacturer.Contains("iBUYPOWER"))
+            if (Program.product.manufacturer.Contains("iBUYPOWER"))
             {
                 FileStream image = new FileStream(@"Images\IBUYPOWERDesktop.png", FileMode.Open, FileAccess.Read);
 
@@ -142,14 +142,14 @@ namespace COMP123_S2019_Assignment5_300614352.Views
                 image.Close();
 
             }
-            if (Program.Product.manufacturer.Contains("Lenovo"))
+            if (Program.product.manufacturer.Contains("Lenovo"))
             {
                 FileStream image = new FileStream(@"Images\LenovoLaptop.jpg", FileMode.Open, FileAccess.Read);
                 OrderFormPictureBox.Image = Image.FromStream(image);
                 image.Close();
 
             }
-            if (Program.Product.manufacturer.Contains("Asus"))
+            if (Program.product.manufacturer.Contains("Asus"))
             {
                 FileStream image = new FileStream(@"Images\AsusLaptop.png", FileMode.Open, FileAccess.Read);
                 OrderFormPictureBox.Image = Image.FromStream(image);
@@ -166,6 +166,17 @@ namespace COMP123_S2019_Assignment5_300614352.Views
         {
             OrderFormPrintForm.PrintAction = PrintAction.PrintToPreview;
             OrderFormPrintForm.Print();
+        }
+
+        private void FinishButton_Click(object sender, EventArgs e)
+        { 
+            DialogResult ok = MessageBox.Show("Thank you for doing business with Dollar Computers!\n\n" +
+                            "Your order will be processed in 7-10 business days", "Your order has been received",
+                             MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (DialogResult.OK == ok)
+            {
+                Application.Exit();
+            }
         }
     }
 }
